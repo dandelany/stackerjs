@@ -1,0 +1,11 @@
+{
+  "name": "imageproxy",
+  "description": "imageproxy",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "cors-anywhere": "^0.1.9",
+    "express": "3.x",
+    "iproxy": "0.0.4"
+  }
+}

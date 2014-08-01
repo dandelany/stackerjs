@@ -1,34 +1,55 @@
 var _ = require('underscore');
-var $ = require('jquery');
-var Bacon = require('baconjs');
-$.fn.asEventStream = Bacon.$.asEventStream;
-var d3 = require('d3');
-var React = require('react');
-var ReactExample = require('./react-example.jsx');
+//var $ = require('jquery');
+//var Bacon = require('baconjs');
+//$.fn.asEventStream = Bacon.$.asEventStream;
+//var d3 = require('d3');
+//var React = require('react');
+//var ReactExample = require('./react-example.jsx');
 
-// App javascript goes here
-console.log("loaded main.js, all is well!");
+var Pixi = require('pixi');
 
-// Bacon.js example
-$(function() {
-    var up = $('#bacon-up').asEventStream('click');
-    var down = $('#bacon-down').asEventStream('click');
-    var counter = up.map(1).merge(down.map(-1))
-                    .scan(0, function(x, y) { return x + y; });
-    var power = counter.scan(0, function(x, y) { return Math.pow(2,y); });
-    power.assign($('#bacon-counter'), 'text');
+// create an new instance of a pixi stage
+var stage = new Pixi.Stage(0x000000);
+
+// create a renderer instance
+var renderer = Pixi.autoDetectRenderer(800, 800);
+
+// add the renderer view element to the DOM
+document.body.appendChild(renderer.view);
+
+
+
+// create a texture from an image path
+var imgGreen = Pixi.Texture.fromImage("http://localhost:8080/sdo.gsfc.nasa.gov/assets/img/browse/2014/01/11/20140111_000000_512_0171.jpg");
+var imgBlue = Pixi.Texture.fromImage("http://localhost:8080/sdo.gsfc.nasa.gov/assets/img/browse/2014/01/11/20140111_000102_512_0094.jpg");
+var imgRed = Pixi.Texture.fromImage("http://localhost:8080/sdo.gsfc.nasa.gov/assets/img/browse/2014/01/01/20140101_000207_512_1700.jpg");
+
+_.each([imgGreen, imgBlue], function(texture, i) {
+    // create a new Sprite using the texture
+    var sunny = new Pixi.Sprite(texture);
+
+    // center the sprites anchor point
+    sunny.anchor.x = sunny.anchor.y = 0.5;
+
+    // move the sprite to the center of the screen
+    sunny.position.x = 300;
+    sunny.position.y = 300;
+    sunny.alpha = 0.75;
+
+    sunny.blendMode = PIXI.blendModes.ADD;
+
+    stage.addChild(sunny);
 });
 
-// Example React component located at src/scripts/react-example.jsx
-React.renderComponent(new ReactExample(), document.getElementById('react-example'));
 
-// D3 example
-var d3Data = [5, 28, 19, 8, 7, 42];
-d3.select('#d3-example')
-    .selectAll('div')
-        .data(d3Data)
-    .enter().append('div')
-        .classed('bar', true)
-        .style('width', function(d) { return (d * 10) + 'px'; })
-        .text(function(d) { return d; });
+requestAnimFrame(animate);
 
+function animate() {
+    //requestAnimFrame(animate);
+
+    // just for fun, let's rotate mr rabbit a little
+    //sunny.rotation += 0.01;
+
+    // render the stage
+    renderer.render(stage);
+}
