@@ -1,0 +1,32 @@
+@font-face {
+  font-family: 'Arvo';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/Arvo/Arvo.eot);
+  src: local('Arvo'), url(../fonts/Arvo/Arvo.eot?#iefix) format('embedded-opentype'), url(../fonts/Arvo/Arvo.woff) format('woff'), url(../fonts/Arvo/Arvo.woff2) format('woff2'), url(../fonts/Arvo/Arvo.ttf) format('truetype'), url(../fonts/Arvo/Arvo.svg#Arvo) format('svg');
+}
+
+@font-face {
+  font-family: 'Arvo';
+  font-style: normal;
+  font-weight: 700;
+  src: url(../fonts/Arvo/Arvo-Bold.eot);
+  src: local('Arvo Bold'), local('Arvo-Bold'), url(../fonts/Arvo/Arvo-Bold.eot?#iefix) format('embedded-opentype'), url(../fonts/Arvo/Arvo-Bold.woff) format('woff'), url(../fonts/Arvo/Arvo-Bold.woff2) format('woff2'), url(../fonts/Arvo/Arvo-Bold.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Arvo';
+  font-style: italic;
+  font-weight: 400;
+  src: url(../fonts/Arvo/Arvo-Italic.eot);
+  src: local('Arvo Italic'), local('Arvo-Italic'), url(../fonts/Arvo/Arvo-Italic.eot?#iefix) format('embedded-opentype'), url(../fonts/Arvo/Arvo-Italic.woff) format('woff'), url(../fonts/Arvo/Arvo-Italic.woff2) format('woff2'), url(../fonts/Arvo/Arvo-Italic.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Arvo';
+  font-style: italic;
+  font-weight: 700;
+  src: url(../fonts/Arvo/Arvo-Bold-Italic.eot);
+  src: local('Arvo Bold Italic'), local('Arvo-BoldItalic'), url(../fonts/Arvo/Arvo-Bold-Italic.eot?#iefix) format('embedded-opentype'), url(../fonts/Arvo/Arvo-Bold-Italic.woff) format('woff'), url(../fonts/Arvo/Arvo-Bold-Italic.woff2) format('woff2'), url(../fonts/Arvo/Arvo-Bold-Italic.ttf) format('truetype');
+}
+
