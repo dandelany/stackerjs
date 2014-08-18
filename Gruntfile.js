@@ -19,7 +19,7 @@ module.exports = function(grunt) {
             'fonts/{,*/}*.*'
         ],
         // add any additional js/less/html files to build here:
-        jsToBuild: ['scripts/main.js'],
+        jsToBuild: ['scripts/main.js', 'scripts/pix.js'],
         lessToBuild: ['styles/main.less'],
         htmlToBuild: ['index.html']
     };

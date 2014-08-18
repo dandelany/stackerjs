@@ -26,15 +26,19 @@
         "load-grunt-tasks": "~0.6.0",
         "react": "~0.11.0",
         "reactify": "~0.14.0",
-        "underscore": "~1.6.0"
+        "underscore": "~1.6.0",
+        "pixastic_src": "jseidelin/pixastic"
     },
     "browserify": {
         "transform": [ "browserify-shim" ]
     },
     "browser": {
-        "pixi": "./bower_components/pixi.js/bin/pixi.dev.js"
+        "pixi": "./bower_components/pixi.js/bin/pixi.dev.js",
+        "pixastic": "./lib/pixastic.all.js"
+
     },
     "browserify-shim": {
-        "pixi": "PIXI"
+        "pixi": "PIXI",
+        "pixastic": "Pixastic"
     }
 }

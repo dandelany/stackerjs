@@ -45,7 +45,8 @@ _.each([imgGreen, imgBlue], function(texture, i) {
 requestAnimFrame(animate);
 
 function animate() {
-    //requestAnimFrame(animate);
+    requestAnimFrame(animate);
+
 
     // just for fun, let's rotate mr rabbit a little
     //sunny.rotation += 0.01;
